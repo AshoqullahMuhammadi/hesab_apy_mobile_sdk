@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity
+            android:name=".ui.HesabPayWebViewActivity"
+            android:exported="false"
+            android:theme="@style/HesabPayWebViewTheme" />
+        
+        <activity
+            android:name=".ui.HesabPayResultComposeActivity"
+            android:exported="false"
+            android:theme="@style/HesabPayWebViewTheme" />
+        
+        <!-- Deep link handler for payment results -->
+        <activity
+            android:name=".ui.HesabPayResultActivity"
+            android:exported="true"
+            android:theme="@style/HesabPayResultTheme"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- This will match any http/https URL - actual filtering done in code -->
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
