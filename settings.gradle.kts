@@ -20,5 +20,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "hesabpay-android-sdk"
-include(":hesabpay-sdk")
- 
