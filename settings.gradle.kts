@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HesabPaySdK"
-include(":app")
+rootProject.name = "hesabpay-android-sdk"
 include(":hesabpay-sdk")
  

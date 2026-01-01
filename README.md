@@ -20,18 +20,38 @@ A simple, secure, and reusable Android SDK for integrating HesabPay's session-ba
 
 ## Installation
 
-### Gradle
+### Using JitPack (Recommended)
 
-Add the SDK to your `build.gradle.kts`:
+Add JitPack to your root `build.gradle.kts`:
 
 ```kotlin
-dependencies {
-    implementation("com.hesabpay:android-sdk:1.0.0")
+allprojects {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
 }
 ```
 
-Or if using the local module:
+Then add the dependency:
 
+```kotlin
+dependencies {
+    implementation("com.github.AshoqullahMuhammadi:hesab_apy_mobile_sdk:1.0.0")
+}
+```
+
+### Using Local Module
+
+If you want to use the SDK as a local module:
+
+1. Clone this repository
+2. Add to your `settings.gradle.kts`:
+```kotlin
+include(":hesabpay-sdk")
+project(":hesabpay-sdk").projectDir = File("../hesab_apy_mobile_sdk/hesabpay-sdk")
+```
+
+3. Add dependency:
 ```kotlin
 dependencies {
     implementation(project(":hesabpay-sdk"))
